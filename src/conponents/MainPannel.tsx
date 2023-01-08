@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const MainPannel: React.FC<Props> = (props) => {
-    const { subTitleChild } = props
+    const { title, subTitleChild } = props
 
     return (
         <Container>
-            <Title>당신의 새로운 도전을 가볍고 빠르게</Title>
+            <Title>{title}</Title>
             <SubTitle>
                 {subTitleChild}
             </SubTitle>
@@ -16,6 +16,7 @@ const MainPannel: React.FC<Props> = (props) => {
 export default MainPannel;
 
 type Props = {
+    title: string
     subTitleChild: JSX.Element
 }
 

@@ -6,11 +6,11 @@ const TopBackground: React.FC<Props> = (props) => {
 
     return (
         <Container>
-            <BgImgage>
+            <BgImgage bgImageUrl={bgImageUrl}>
                 <Blur />
                 <TitleLayout>
-                    <Title>쇼트트렉의 목표</Title>
-                    <SubTitle>빠르고 신속하게 도전하고 실패하는 것입니다.</SubTitle>
+                    <Title>{title}</Title>
+                    <SubTitle>{subTitle}</SubTitle>
                 </TitleLayout>
             </BgImgage>
         </Container>
@@ -32,12 +32,12 @@ const Container = styled.div`
     left: 0;
     box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 0px 0px rgb(0 0 0 / 12%);
 `
-const BgImgage = styled.div`
+const BgImgage = styled.div<{bgImageUrl: string}>`
     max-width: 100%;
     height: 650px;
     background-repeat: no-repeat;
     box-sizing: inherit;
-    background-image: url(https://woowacourse.github.io/img/about_banner.1aa0bc91.jpg);
+    background-image: url(${(props) => props.bgImageUrl});
     background-position: center;
     background-size: cover;
     display: flex;
