@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainPannel from '../conponents/MainPannel'
+import ProcessList from '../conponents/ProcessList'
 import RecommendList from '../conponents/RecommendList'
 import recommends from '../fixtures/recommends.json'
+import processes from '../fixtures/processes.json'
 
 const Home: React.FC = () => {
     return (
@@ -21,7 +23,10 @@ const Home: React.FC = () => {
                 />
             </HeadContents>
             <MainContents>
-                <h2>누구를 위한 과정인가요</h2>
+                <h2>어떻게 진행되나요?</h2>
+                <ProcessList datas={processes} />
+                <h2>누구를 위한 과정인가요?</h2>
+                <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
                 <RecommendList datas={recommends} />
             </MainContents>
         </>
@@ -35,6 +40,10 @@ const HeadContents = styled.div`
 const MainContents = styled.div`
     max-width: 640px;
     margin-bottom: 60px;
+    > p {
+        font-family: 'NanumSquareNeoExtraBold';
+        font-size: 1em;
+    }
 `
 const Strong = styled.strong`
     font-family: 'NanumSquareNeoExtraBold';
