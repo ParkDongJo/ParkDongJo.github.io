@@ -9,7 +9,7 @@ const Header: React.FC = () =>  {
         <Container>
             <Bar>
                 <RightBox>
-                    <span>쇼트트랙</span>
+                    <Link to="/"><span>쇼트트랙</span></Link>
                 </RightBox>
                 <Spacer />
                 <MenuRow><Link to="/intro"><span>소개</span></Link></MenuRow>
@@ -39,12 +39,15 @@ const Bar = styled.div`
     background-color: ransparent !important;
 `
 const RightBox = styled.div`
-    width: 200px;
-    height: 64px;
-    text-align: center;
-    line-height: 64px;
-    color: #FFFFFF;
-    font-size: 1.5rem;
+    & a {
+        width: 200px;
+        height: 64px;
+        text-align: center;
+        line-height: 64px;
+        color: #FFFFFF;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
 `
 const Spacer = styled.div`
     flex-grow: 1 !important;

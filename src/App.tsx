@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Header from './conponents/Header'
 import Bottom from './conponents/Bottom'
 import TopBackground from './conponents/TopBackground'
-import Home from './pages/Intro'
+import Home from './pages/Home'
 import Intro from './pages/Intro'
 import Course from './pages/Course'
 import Apply from './pages/Apply'
@@ -34,7 +34,7 @@ function App() {
 export default App;
 
 const topContents: KeyStringDatas = {
-  "/": { title: "단기간 테크코스", subTitle: "개발자로 성장하기 위한 전체과정을 잘게 쪼개어 접근합니다.", bgImageUrl: "https://woowacourse.github.io/img/about_banner.1aa0bc91.jpg" },
+  "/": { title: "단기간 코스", subTitle: "쇼트트랙은 단기간 내에 끝낼 수 있는 밀착형 랜선과외 입니다.", bgImageUrl: "https://woowacourse.github.io/img/about_banner.1aa0bc91.jpg" },
   "/intro": { title: "쇼트트렉의 목표", subTitle: "당신이 빠르고 신속하게 도전하고, 실패하고, 실험할 수 있게끔 코칭합니다.", bgImageUrl: "https://woowacourse.github.io/img/about_banner.1aa0bc91.jpg" },
   "/course": { title: "커리큘럼", subTitle: "쇼트트렉의 모든 커리큘럼은 1달 안에 이뤄집니다.", bgImageUrl: "https://woowacourse.github.io/img/about_banner.1aa0bc91.jpg" },
   "/apply": { title: "지원하기", subTitle: "지원하기 전 나에게 맞는 과정인지 확인해보세요.", bgImageUrl: "https://woowacourse.github.io/img/about_banner.1aa0bc91.jpg" },

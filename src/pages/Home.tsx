@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainPannel from '../conponents/MainPannel'
+import RecommendList from '../conponents/RecommendList'
+import recommends from '../fixtures/recommends.json'
 
 const Home: React.FC = () => {
     return (
         <>
-            <Contents>
+            <HeadContents>
                 <MainPannel
                     title="당신의 새로운 도전을 가볍고 빠르게"
                     subTitleChild={
@@ -17,14 +19,22 @@ const Home: React.FC = () => {
                         <p>그래야 다음 결정을 더 빠르고 정확하게 할 수 있습니다.</p>
                         </>}
                 />
-            </Contents>
+            </HeadContents>
+            <MainContents>
+                <h2>누구를 위한 과정인가요</h2>
+                <RecommendList datas={recommends} />
+            </MainContents>
         </>
     )
 }
 export default Home;
 
-const Contents = styled.div`
-  max-width: 640px;
+const HeadContents = styled.div`
+    max-width: 640px;
+`
+const MainContents = styled.div`
+    max-width: 640px;
+    margin-bottom: 60px;
 `
 const Strong = styled.strong`
     font-family: 'NanumSquareNeoExtraBold';
