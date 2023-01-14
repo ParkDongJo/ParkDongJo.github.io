@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import MainPannel from '../conponents/MainPannel'
-import ProcessList from '../conponents/ProcessList'
-import RecommendList from '../conponents/RecommendList'
+import IconCardList, { CardType } from '../conponents/IconCardList'
+import FlatCard from '../conponents/FlatCard';
+import LongCard from '../conponents/LongCard';
 import recommends from '../fixtures/recommends.json'
 import processes from '../fixtures/processes.json'
 
@@ -23,11 +24,19 @@ const Home: React.FC = () => {
                 />
             </HeadContents>
             <MainContents>
-                <h2>어떻게 진행되나요?</h2>
-                <ProcessList datas={processes} />
+                <h2>무슨 차이가 있나요?</h2>
+                <IconCardList datas={processes} type={CardType.Flat}>
+                    <FlatCard />
+                </IconCardList>
                 <h2>누구를 위한 과정인가요?</h2>
                 <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
-                <RecommendList datas={recommends} />
+                <IconCardList datas={recommends} type={CardType.Flat}>
+                    <FlatCard />
+                </IconCardList>
+                <h2>어떻게 진행되나요?</h2>
+                <IconCardList datas={processes} type={CardType.Long}>
+                    <LongCard />
+                </IconCardList>
             </MainContents>
         </>
     )
@@ -38,7 +47,7 @@ const HeadContents = styled.div`
     max-width: 640px;
 `
 const MainContents = styled.div`
-    max-width: 640px;
+    max-width: 960px;
     margin-bottom: 60px;
     > p {
         font-family: 'NanumSquareNeoExtraBold';
