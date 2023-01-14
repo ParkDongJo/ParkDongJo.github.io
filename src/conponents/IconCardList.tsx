@@ -5,10 +5,10 @@ export enum CardType {
     Flat = "Flat",
     Long = "Long"
 }
+
 const IconCardList: React.FC<Props> = (props) => {
     const { datas, type, children } = props
     const direction = type === CardType.Flat ? "column" : " row"
-
     return (
         <Container direction={direction}>
             {datas.map(({ id, ...rest }: CardData) => {
@@ -35,8 +35,11 @@ type CardData = {
 
 const Container = styled.div<{ direction: string }>`
     width: 960px;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     flex-direction: ${(props) => props.direction};
+    gap: 20px;
 `

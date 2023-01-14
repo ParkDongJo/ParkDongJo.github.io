@@ -1,11 +1,18 @@
 import React from "react"
 import styled from "styled-components"
 
+const CARD_WIDTH = 230
+
 const LongCard: React.FC<Props> = (props) => {
     const { iconUrl, title, desc } = props
+
     return (
         <Container>
-
+            <img width={CARD_WIDTH} height={CARD_WIDTH} src={iconUrl} alt='' />
+            <div>
+                <h3>{title}</h3>
+                <Description>{desc}</Description>
+            </div>
         </Container>
     )
 }
@@ -18,11 +25,11 @@ type Props = {
 }
 
 const Container = styled.div`
-    background-color: blue;
-    border: 1px solid #FFF;
-    flex: 0 0 25%;
-    max-width: 25%;
-    padding: 8px !important;
+    width: ${CARD_WIDTH}px;
+    padding: 10px 30px;
+    background-color: #FFF;
+    box-shadow: 0px 30px 50px 0px rgb(5 1 64 / 6%) !important;
+
 `
 const Description = styled.p`
     font-size: 0.8em !important;

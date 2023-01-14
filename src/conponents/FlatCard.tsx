@@ -48,8 +48,8 @@ const Container = styled.div`
     }
 `
 const Description = styled.p`
-    font-size: 0.8em !important;
-    font-family: 'NanumSquareNeoBold';
+    font-size: 1em !important;
+    font-family: 'NanumSquareNeoBold' !important;
     text-align: left;
     white-space: pre-line;
     line-height: 2em;
