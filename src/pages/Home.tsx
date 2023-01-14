@@ -4,6 +4,7 @@ import MainPannel from '../conponents/MainPannel'
 import IconCardList, { CardType } from '../conponents/IconCardList'
 import FlatCard from '../conponents/FlatCard';
 import LongCard from '../conponents/LongCard';
+import TileList from '../conponents/TileList';
 import recommends from '../fixtures/recommends.json'
 import processes from '../fixtures/processes.json'
 
@@ -24,19 +25,27 @@ const Home: React.FC = () => {
                 />
             </HeadContents>
             <MainContents>
-                <h2>무슨 차이가 있나요?</h2>
-                <IconCardList datas={processes} type={CardType.Flat}>
-                    <FlatCard />
-                </IconCardList>
-                <h2>누구를 위한 과정인가요?</h2>
-                <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
-                <IconCardList datas={recommends} type={CardType.Flat}>
-                    <FlatCard />
-                </IconCardList>
-                <h2>어떻게 진행되나요?</h2>
-                <IconCardList datas={processes} type={CardType.Long}>
-                    <LongCard />
-                </IconCardList>
+                <BackgroundLayout bgColor={"#fafafa"}>
+                    <h2>무슨 차이가 있나요?</h2>
+                    <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
+                    <IconCardList datas={processes} type={CardType.Long}>
+                        <LongCard />
+                    </IconCardList>
+                </BackgroundLayout>
+                <BackgroundLayout bgColor={"#ffffff"}>
+                    <h2>누구를 위한 과정인가요?</h2>
+                    <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
+                    <IconCardList datas={recommends} type={CardType.Flat}>
+                        <FlatCard />
+                    </IconCardList>
+                </BackgroundLayout>
+                <BackgroundLayout bgColor={"#fafafa"}>
+                    <h2>어떻게 진행되나요?</h2>
+                    <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
+                    <TileList>
+                        <div></div>
+                    </TileList>
+                </BackgroundLayout>
             </MainContents>
         </>
     )
@@ -47,15 +56,23 @@ const HeadContents = styled.div`
     max-width: 640px;
 `
 const MainContents = styled.div`
-    max-width: 960px;
+    width: 100%;
     margin-bottom: 60px;
-    > p {
-        font-family: 'NanumSquareNeoExtraBold';
-        font-size: 1em;
-    }
 `
 const Strong = styled.strong`
     font-family: 'NanumSquareNeoExtraBold';
     color: rgba(0, 0, 0, 1);
     font-size: 1.2em;
+`
+const BackgroundLayout = styled.div<{ bgColor: string }>`
+    padding: 5em 0;
+    background-color: ${(props) => props.bgColor};
+    > h2 {
+        font-size: 30px;
+    }
+    > p {
+        font-family: 'NanumSquareNeoBold';
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
 `
