@@ -20,7 +20,7 @@ type Props = {
 
 export type LevelData = {
     id: number
-    level: number
+    level: string
     tags: TagData[]
 }
 type TagData = {
@@ -31,4 +31,6 @@ type TagData = {
 const Container = styled.ul`
     width: 960px;
     margin: 0 auto;
+    border-top: 2px solid rgb(118, 118, 118);
+    padding-inline-start: 0 !important;
 `

@@ -31,9 +31,9 @@ const Course: React.FC = () => {
                     <h2>어떻게 진행되나요?</h2>
                     <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
                     <LevelList datas={[
-                        {id: 1, level: 1, tags: [{title: "초급", color: "#ff0000"}, {title: "초급", color: "#ff0000"}]},
-                        {id: 2, level: 2, tags: [{title: "중급", color: "#00ff00"}]},
-                        {id: 3, level: 3, tags: [{title: "고급", color: "#0000ff"}]},
+                        {id: 1, level: 'Lv. 1', tags: [{title: "초급과정", color: "#ff0000"}, {title: "초급", color: "rgb(4, 105, 255)"}, {title: "초급", color: "rgb(255, 174, 0)"}, {title: "초급", color: "rgb(255, 174, 0)"}]},
+                        {id: 2, level: 'Lv. 2', tags: [{title: "중급", color: "rgb(0, 202, 153)"}]},
+                        {id: 3, level: 'Lv. 3', tags: [{title: "고급", color: "rgb(46, 46, 46)"}]},
                     ]} />
                 </BackgroundLayout>
             </MainContents>

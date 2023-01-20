@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import CourseRow, { CourseData, Step } from './CourseRow'
+import CourseRow, { CourseData } from './CourseRow'
 
 const CourseList: React.FC<Props> = (props) => {
     const { datas } = props
     const [selectedRowId, setSelectedRowId] = useState<string>()
 
     const onClickRow = (id: string) => {
-        if (selectedRowId) {
+        if (selectedRowId === id) {
             setSelectedRowId(undefined)
             return
         }
