@@ -38,6 +38,11 @@ type Props = {
 }
 
 const Container = styled.div`
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `
 const Row = styled.div`
 `

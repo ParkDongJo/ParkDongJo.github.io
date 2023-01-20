@@ -5,6 +5,7 @@ import IconCardList, { CardType } from '../conponents/IconCardList'
 import FlatCard from '../conponents/FlatCard';
 import LongCard from '../conponents/LongCard';
 import TileList from '../conponents/TileList';
+import Button, { ButtonType } from '../conponents/Button';
 import recommends from '../fixtures/recommends.json'
 import processes from '../fixtures/processes.json'
 
@@ -46,6 +47,12 @@ const Home: React.FC = () => {
                         <div></div>
                     </TileList>
                 </BackgroundLayout>
+                <BackgroundLayout bgColor={"#ffffff"}>
+                    <h2>무엇이든 물어보세요?</h2>
+                    <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
+                    <Button type={ButtonType.Primary} size={"medium"} title={"FAQ"} onPress={() => {}} />
+                    <Button type={ButtonType.Primary} size={"medium"} title={"문의하기"} onPress={() => {}} />
+                </BackgroundLayout>
             </MainContents>
         </>
     )
@@ -74,5 +81,8 @@ const BackgroundLayout = styled.div<{ bgColor: string }>`
         font-family: 'NanumSquareNeoBold';
         font-size: 1em;
         margin-bottom: 40px;
+    }
+    > button {
+        margin: 0 10px;
     }
 `
