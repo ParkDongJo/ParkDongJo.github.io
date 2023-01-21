@@ -3,14 +3,19 @@ import styled from 'styled-components';
 
 export enum CardType {
     Flat = "Flat",
-    Long = "Long"
+    Long = "Long",
+    Medium = "Medium"
 }
 
 const IconCardList: React.FC<Props> = (props) => {
-    const { datas, type, children } = props
-    const direction = type === CardType.Flat ? "column" : " row"
+    const { width = 960, datas, type, children } = props
+    const direction = {
+        [CardType.Flat]: "column",
+        [CardType.Long]: "row",
+        [CardType.Medium]: "row"
+    }[type]
     return (
-        <Container direction={direction}>
+        <Container width={width} direction={direction}>
             {datas.map(({ id, ...rest }: CardData) => {
                 return <>
                     {React.cloneElement(children, {...rest})}
@@ -22,6 +27,7 @@ const IconCardList: React.FC<Props> = (props) => {
 export default IconCardList;
 
 type Props = {
+    width?: number
     children: React.ReactElement
     type: CardType
     datas: CardData[]
@@ -33,8 +39,8 @@ type CardData = {
     desc: string
 }
 
-const Container = styled.div<{ direction: string }>`
-    width: 960px;
+const Container = styled.div<{ width: number; direction: string }>`
+    width: ${(props) => props.width}px};
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
