@@ -1,0 +1,27 @@
+[
+    { 
+        "id": 1, 
+        "iconUrl": "/images/process1.png", 
+        "title": "오프라인과 온라인의 결합",
+        "desc":
+            "함께 고민하고 성장합니다. 리뷰는 깃헙으로 합니다."
+    },
+    { 
+        "id": 3,
+        "iconUrl": "/images/process3.png",
+        "title": "소수로 진행되는 밀착형 과외",
+        "desc": "안녕하세요."
+    },
+    { 
+        "id": 3,
+        "iconUrl": "/images/process4.png",
+        "title": "현업 실무자 직접코칭",
+        "desc": "안녕하세요."
+    },
+    { 
+        "id": 3,
+        "iconUrl": "/images/process4.png",
+        "title": "현업 실무자 직접코칭",
+        "desc": "안녕하세요."
+    }
+]

@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import MainPannel from '../conponents/MainPannel'
 import CourseList from '../conponents/CourseList'
 import LevelList from  '../conponents/LevelList'
+import IconCardList, { CardType } from  '../conponents/IconCardList'
+import GridCard from  '../conponents/GridCard'
 import courses from '../fixtures/courses.json'
+import reviews from '../fixtures/reviews.json'
 
 const Course: React.FC = () => {
     return (
@@ -22,12 +25,12 @@ const Course: React.FC = () => {
                 />
             </HeadContents>
             <MainContents>
-                <BackgroundLayout bgColor={"#ffffff"}>
+                <BackgroundLayout bgColor={"#fafafa"}>
                     <h2>태크트렉 종류</h2>
                     <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
                     <CourseList datas={courses} />
                 </BackgroundLayout>
-                <BackgroundLayout bgColor={"#fafafa"}>
+                <BackgroundLayout bgColor={"#ffffff"}>
                     <h2>어떻게 진행되나요?</h2>
                     <p>아래의 고민을 가지고 계신 분은 지금 바로 신청하세요!</p>
                     <LevelList datas={[
@@ -35,6 +38,13 @@ const Course: React.FC = () => {
                         {id: 2, level: 'Lv. 2', tags: [{title: "중급", color: "rgb(0, 202, 153)"}]},
                         {id: 3, level: 'Lv. 3', tags: [{title: "고급", color: "rgb(46, 46, 46)"}]},
                     ]} />
+                </BackgroundLayout>
+                <BackgroundLayout bgColor={"#fafafa"}>
+                    <h2>태크트렉 선수자질</h2>
+                    <p>우리는 이런 선수를 찾습니다.</p>
+                    <IconCardList width={800} datas={reviews} type={CardType.Medium}>
+                        <GridCard />
+                    </IconCardList>
                 </BackgroundLayout>
             </MainContents>
         </>
